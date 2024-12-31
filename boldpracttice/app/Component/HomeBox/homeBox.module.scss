@@ -1,0 +1,71 @@
+.Home_box_wrapper {
+  margin-right: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 576px) {
+  .PortalLinkBox_box_wrapper {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .PortalLinkBox_box_wrapper {
+    width: 38vw;
+  }
+}
+
+.PortalLinkBox_box_wrapper {
+  width: 27vw;
+  padding: 8px 16px;
+  border-radius: 10px;
+  display: -moz-box;
+  display: flex;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  flex-direction: column;
+  -moz-box-align: center;
+  align-items: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  min-height: 310px;
+  border: 2px solid #dddce0;
+  background: #fff;
+  color: black;
+  text-decoration: none;
+}
+
+.PortalLinkBox_icon {
+  width: 144px;
+  height: 144px;
+  margin-bottom: 16px;
+}
+
+.PortalLinkBox_impressive_university_icon {
+  color: #3182ce;
+}
+
+.PortalLinkBox_study_meeting_icon {
+  color: #38a169;
+}
+
+.PortalLinkBox_title_wrapper {
+  margin-bottom: 16px;
+  display: -moz-box;
+  display: flex;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+}
+
+.PortalLinkBox_title_text {
+  font-weight: 700;
+  font-size: 20px;
+  white-space: pre-wrap;
+}
+
+.PortalLinkBox_description_wrapper {
+  margin-bottom: 1rem;
+  color: black;
+  text-decoration: none;
+}
