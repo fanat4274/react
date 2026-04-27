@@ -2,6 +2,14 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Implementation Workflow
+
+実装タスクは **2つのサブエージェントを並列で起動** して進める:
+- **Agent 1**: フロントエンド (`boldpracttice/`) 担当
+- **Agent 2**: バックエンド (`go-service/`) 担当
+
+インターフェース（API エンドポイントの型・レスポンス形式）は着手前に合意してから並列実装する。
+
 ## Repository Structure
 
 This is a full-stack monorepo with two main services:

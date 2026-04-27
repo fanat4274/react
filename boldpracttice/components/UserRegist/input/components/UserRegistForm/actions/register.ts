@@ -5,6 +5,7 @@ import { UserRegistFormData } from '@/components/UserRegist/types/UserRegistForm
 
 export type RegisterResult = {
   success: boolean;
+  userLoginId?: string;
   errors?: {
     userName?: string[];
     email?: string[];
@@ -25,16 +26,28 @@ export async function registerUser(formData: UserRegistFormData): Promise<Regist
   }
 
   try {
-    // TODO: DB処理やAPI呼び出し
-    // const response = await fetch('http://localhost:8080/api/users/register', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(result.data),
-    // });
+    const response = await fetch('http://localhost:8080/api/users/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        user_name: formData.userName,
+        email: formData.email,
+        password: formData.password,
+      }),
+    });
 
-    console.log('User registration:', result.data);
+    const json = await response.json();
 
-    return { success: true };
+    if (!json.success) {
+      return {
+        success: false,
+        errors: {
+          _form: ['登録処理中にエラーが発生しました'],
+        },
+      };
+    }
+
+    return { success: true, userLoginId: json.data.user_login_id };
   } catch {
     return {
       success: false,

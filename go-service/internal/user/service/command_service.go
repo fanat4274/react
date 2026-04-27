@@ -35,7 +35,6 @@ func (s *CommandService) CreateUser(req *user.CreateUserRequest) (*user.UserResp
 
 	newUser := &user.User{
 		UserName:           req.UserName,
-		UserLoginID:        req.UserLoginID,
 		Email:              req.Email,
 		PasswordHash:       string(hashedPassword),
 		RegistrationSource: "web",
