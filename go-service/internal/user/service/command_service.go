@@ -35,7 +35,6 @@ func (s *CommandService) CreateUser(req *user.CreateUserRequest) (*user.UserResp
 
 	newUser := &user.User{
 		UserName:           req.UserName,
-		UserLoginID:        req.UserLoginID,
 		Email:              req.Email,
 		PasswordHash:       string(hashedPassword),
 		RegistrationSource: "web",
@@ -47,6 +46,20 @@ func (s *CommandService) CreateUser(req *user.CreateUserRequest) (*user.UserResp
 	}
 
 	return newUser.ToResponse(), nil
+}
+
+// LoginUser ログイン認証
+func (s *CommandService) LoginUser(req *user.LoginRequest) (*user.UserResponse, error) {
+	foundUser, err := s.repo.GetByLoginID(req.UserLoginID)
+	if err != nil {
+		return nil, errors.New("invalid credentials")
+	}
+
+	if err := bcrypt.CompareHashAndPassword([]byte(foundUser.PasswordHash), []byte(req.Password)); err != nil {
+		return nil, errors.New("invalid credentials")
+	}
+
+	return foundUser.ToResponse(), nil
 }
 
 // DeleteUser ユーザーを削除（論理削除）

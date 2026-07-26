@@ -20,10 +20,15 @@ type User struct {
 
 // CreateUserRequest ユーザー登録リクエスト
 type CreateUserRequest struct {
-	UserName    string `json:"user_name" validate:"required,min=1,max=64"`
-	UserLoginID string `json:"user_login_id" validate:"required,min=3,max=64,alphanum"`
-	Email       string `json:"email" validate:"required,email"`
-	Password    string `json:"password" validate:"required,min=6,max=100"`
+	UserName string `json:"user_name" validate:"required,min=1,max=64"`
+	Email    string `json:"email" validate:"required,email"`
+	Password string `json:"password" validate:"required,min=6,max=100"`
+}
+
+// LoginRequest ログインリクエスト
+type LoginRequest struct {
+	UserLoginID string `json:"user_login_id" validate:"required"`
+	Password    string `json:"password" validate:"required"`
 }
 
 // SearchUserRequest ユーザー検索リクエスト

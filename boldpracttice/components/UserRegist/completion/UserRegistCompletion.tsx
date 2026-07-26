@@ -5,7 +5,11 @@ import styles from './UserRegistCompletion.module.scss';
 import { Button, BUTTON_VARIANTS, BUTTON_ELEMENTS } from '@/components/common/ui/Button';
 import { PATH_LOGIN, PATH_HOME } from '@/config/const/paths';
 
-export const UserRegistCompletion: React.FC = () => {
+type Props = {
+  userLoginId: string;
+};
+
+export const UserRegistCompletion: React.FC<Props> = ({ userLoginId }) => {
   return (
     <div className={styles.container}>
       <div className={styles.contentWrapper}>
@@ -33,6 +37,13 @@ export const UserRegistCompletion: React.FC = () => {
           <br />
           ログインしてサービスをご利用ください。
         </p>
+
+        {userLoginId && (
+          <div className={styles.loginIdBox}>
+            <p className={styles.loginIdLabel}>ログインID</p>
+            <p className={styles.loginIdValue}>{userLoginId}</p>
+          </div>
+        )}
 
         <div className={styles.buttonGroup}>
           <Button

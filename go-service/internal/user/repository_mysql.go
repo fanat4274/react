@@ -3,6 +3,7 @@ package user
 import (
 	"database/sql"
 	"errors"
+	"fmt"
 	"go-service/internal/user/query"
 	"go-service/pkg/database"
 	"time"
@@ -50,6 +51,7 @@ func (r *MySQLRepository) Create(user *User) error {
 		return err
 	}
 	userCode := maxID + 1
+	user.UserLoginID = fmt.Sprintf("user%06d", userCode)
 
 	// ユーザー挿入
 	now := time.Now()

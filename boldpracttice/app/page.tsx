@@ -42,6 +42,9 @@ const Home = () => {
                 <li>
                   <a href="/block">テトリス</a>
                 </li>
+                <li>
+                  <a href="/deck-tracker">スレスパ2 リージェントデッキトラッカー</a>
+                </li>
               </ul>
             </div>
           </div>

@@ -1,6 +1,8 @@
 -- 初期化用SQLファイル
 -- このディレクトリ内のSQLファイルは、コンテナ起動時に自動実行されます
 
+SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 -- ユーザーマスターテーブルの作成
 CREATE TABLE user_master (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -21,6 +23,6 @@ CREATE TABLE user_master (
 
 -- サンプルデータ（開発用）
 INSERT INTO user_master (user_code, user_name, user_login_id, email, password_hash, is_invalid) VALUES
-(1, 'テストユーザー', 'testuser', 'test@example.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 0),
-(2, '管理者', 'admin', 'admin@example.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 0);
+(1, 'テストユーザー', 'user000001', 'test@example.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 0),
+(2, '管理者', 'user000002', 'admin@example.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 0);
 -- パスワードは両方とも "password123" のハッシュ値
