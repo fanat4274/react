@@ -26,7 +26,7 @@ export const HeaderComponent: React.FC = () => {
             <div className={styles.userStatus}>
               {session ? (
                 <p className={styles.userInfo}>
-                  ようこそ、<span className={styles.userName}>{session.user.name}</span>さん
+                  ようこそ、<span className={styles.userName}>{session.user?.name}</span>さん
                 </p>
               ) : (
                 <p className={styles.userInfo}>ゲストユーザー</p>
