@@ -1,0 +1,22 @@
+@use '@/styles/variables';
+
+.countDisplay {
+  display: flex;
+  align-items: center;
+  gap: variables.$spacing_1;
+  min-width: 140px;
+}
+
+.label {
+  min-width: 84px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.value {
+  min-width: 32px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: right;
+  color: #2c3e50;
+}

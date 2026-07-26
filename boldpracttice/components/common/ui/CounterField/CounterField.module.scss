@@ -1,0 +1,22 @@
+@use '@/styles/variables';
+
+.field {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: variables.$spacing_2;
+  padding: variables.$spacing_1 variables.$spacing_1 variables.$spacing_1 variables.$spacing_2;
+  border-bottom: 1px solid #e9ecef;
+  border-left: 4px solid transparent;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: variables.$spacing_1;
+  margin-left: auto;
+}
